@@ -1,0 +1,558 @@
+/* ============================================
+   CELESTIAL READS — GLOBAL STYLES
+   Drop this as index.css (replaces existing)
+   Covers: Navbar, Admin, BookDetails, Welcome,
+           and all shared MUI overrides
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  --navy-deep:    #0f1624;
+  --navy-mid:     #1a2540;
+  --navy-border:  #2e3d5c;
+  --navy-muted:   #8a9bbf;
+  --gold:         #c9a84c;
+  --gold-light:   #f0d080;
+  --gold-dark:    #a8833a;
+  --cream:        #f0e6c8;
+  --text-primary: #e8e0d4;
+  --text-secondary: #c8d6e8;
+  --green:        #4ade80;
+  --red:          #f87171;
+  --radius-card:  14px;
+  --radius-btn:   8px;
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--navy-deep);
+  color: var(--text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Selection color ── */
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: var(--cream);
+}
+
+/* ============================================
+   NAVBAR
+============================================ */
+
+.MuiAppBar-root {
+  background: rgba(15, 22, 36, 0.97) !important;
+  border-bottom: 1px solid var(--navy-border) !important;
+  box-shadow: 0 1px 16px rgba(0,0,0,0.4) !important;
+  backdrop-filter: blur(12px);
+}
+
+.MuiToolbar-root {
+  padding: 0 28px !important;
+  min-height: 64px !important;
+}
+
+/* Brand name in navbar */
+.MuiAppBar-root .MuiTypography-h6 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  color: var(--cream) !important;
+  letter-spacing: 0.03em;
+}
+
+/* Navbar buttons */
+.MuiAppBar-root .MuiButton-root {
+  color: var(--navy-muted) !important;
+  text-transform: none !important;
+  font-size: 0.87rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-btn) !important;
+  padding: 6px 14px !important;
+  transition: color 0.15s, background 0.15s !important;
+}
+
+.MuiAppBar-root .MuiButton-root:hover {
+  color: var(--gold) !important;
+  background: rgba(201,168,76,0.08) !important;
+}
+
+/* ============================================
+   PAGE WRAPPER (from App.jsx Box p:3)
+============================================ */
+
+/* Override the App.jsx Box padding to work with our dark theme */
+#root > div > div[class*="MuiBox"] {
+  padding: 0 !important;
+}
+
+/* ============================================
+   SHARED CONTAINER STYLING
+============================================ */
+
+.MuiContainer-root {
+  padding-top: 40px !important;
+  padding-bottom: 60px !important;
+}
+
+/* ── Page headings (h4 used across admin pages) ── */
+.MuiTypography-h4 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: var(--cream) !important;
+  letter-spacing: -0.01em;
+}
+
+.MuiTypography-h5 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 600 !important;
+  color: var(--cream) !important;
+}
+
+.MuiTypography-h6 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  color: var(--text-primary) !important;
+}
+
+.MuiTypography-body1,
+.MuiTypography-body2 {
+  color: var(--text-secondary) !important;
+}
+
+/* ============================================
+   GLOBAL MUI FORM OVERRIDES
+   (all pages not covered by page-scoped CSS)
+============================================ */
+
+.MuiOutlinedInput-root {
+  background: var(--navy-mid);
+  border-radius: 10px !important;
+  color: var(--text-primary) !important;
+  font-size: 0.92rem;
+}
+
+.MuiOutlinedInput-root fieldset {
+  border-color: var(--navy-border) !important;
+  transition: border-color 0.2s;
+}
+
+.MuiOutlinedInput-root:hover fieldset {
+  border-color: var(--gold) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: var(--gold) !important;
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+}
+
+.MuiOutlinedInput-root.Mui-disabled {
+  opacity: 0.5;
+}
+
+.MuiInputLabel-root {
+  color: var(--navy-muted) !important;
+  font-size: 0.9rem;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--gold) !important;
+}
+
+.MuiInputBase-input {
+  color: var(--text-primary) !important;
+}
+
+.MuiInputBase-input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--navy-mid) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+.MuiFormHelperText-root {
+  color: var(--navy-muted) !important;
+  font-size: 0.75rem;
+}
+
+.MuiFormHelperText-root.Mui-error {
+  color: var(--red) !important;
+}
+
+/* ── Select ── */
+.MuiSelect-select {
+  color: var(--text-primary) !important;
+}
+
+.MuiSelect-icon {
+  color: var(--navy-muted) !important;
+}
+
+/* ── Dropdown menus ── */
+.MuiMenu-paper,
+.MuiAutocomplete-paper,
+.MuiPopover-paper {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+  border-radius: 10px !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+
+.MuiMenuItem-root {
+  color: var(--text-primary) !important;
+  font-size: 0.9rem;
+  padding: 10px 16px !important;
+}
+
+.MuiMenuItem-root:hover,
+.MuiMenuItem-root.Mui-selected,
+.MuiAutocomplete-option[aria-selected="true"] {
+  background: rgba(201,168,76,0.1) !important;
+}
+
+.MuiAutocomplete-option {
+  color: var(--text-primary) !important;
+}
+
+/* ============================================
+   BUTTONS (global defaults)
+============================================ */
+
+.MuiButton-containedPrimary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark)) !important;
+  color: var(--navy-deep) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  border-radius: var(--radius-btn) !important;
+  box-shadow: 0 3px 12px rgba(201,168,76,0.25) !important;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s !important;
+  letter-spacing: 0.02em;
+}
+
+.MuiButton-containedPrimary:hover {
+  opacity: 0.9;
+  box-shadow: 0 6px 20px rgba(201,168,76,0.35) !important;
+  transform: translateY(-1px);
+}
+
+.MuiButton-containedSuccess {
+  background: linear-gradient(135deg, #22c55e, #16a34a) !important;
+  color: #fff !important;
+  text-transform: none !important;
+  border-radius: var(--radius-btn) !important;
+  font-weight: 600 !important;
+}
+
+.MuiButton-containedError {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: #fff !important;
+  text-transform: none !important;
+  border-radius: var(--radius-btn) !important;
+  font-weight: 600 !important;
+}
+
+.MuiButton-containedWarning {
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  color: #0f1624 !important;
+  text-transform: none !important;
+  border-radius: var(--radius-btn) !important;
+  font-weight: 600 !important;
+}
+
+.MuiButton-outlined {
+  border-color: var(--navy-border) !important;
+  color: var(--navy-muted) !important;
+  text-transform: none !important;
+  border-radius: var(--radius-btn) !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+}
+
+.MuiButton-outlined:hover {
+  border-color: var(--gold) !important;
+  color: var(--gold) !important;
+  background: rgba(201,168,76,0.06) !important;
+}
+
+.MuiButton-root.Mui-disabled {
+  opacity: 0.35 !important;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   TABS (AdminAccess)
+============================================ */
+
+.MuiTabs-root {
+  border-bottom: 1px solid var(--navy-border) !important;
+  margin-bottom: 4px;
+}
+
+.MuiTab-root {
+  color: var(--navy-muted) !important;
+  text-transform: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  min-width: 120px !important;
+}
+
+.MuiTab-root.Mui-selected {
+  color: var(--gold) !important;
+  font-weight: 600 !important;
+}
+
+.MuiTabs-indicator {
+  background: var(--gold) !important;
+  height: 2px !important;
+  border-radius: 2px 2px 0 0;
+}
+
+/* ============================================
+   TABLES (AdminDashboard, AdminAccess, UserProfile)
+============================================ */
+
+.MuiTable-root {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+.MuiTableHead-root {
+  background: rgba(15,22,36,0.8) !important;
+}
+
+.MuiTableCell-head {
+  color: var(--navy-muted) !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  border-bottom: 1px solid var(--navy-border) !important;
+  padding: 14px 16px !important;
+  white-space: nowrap;
+}
+
+.MuiTableCell-body {
+  color: var(--text-secondary) !important;
+  border-bottom: 1px solid rgba(46,61,92,0.5) !important;
+  font-size: 0.9rem;
+  padding: 13px 16px !important;
+}
+
+.MuiTableRow-root:last-child .MuiTableCell-body {
+  border-bottom: none !important;
+}
+
+.MuiTableRow-body:hover .MuiTableCell-body {
+  background: rgba(201,168,76,0.03) !important;
+}
+
+/* ── Table paper wrapper ── */
+.MuiPaper-root {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+  border-radius: var(--radius-card) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3) !important;
+}
+
+/* ============================================
+   CHIPS (status badges)
+============================================ */
+
+.MuiChip-root {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  border-radius: 6px !important;
+  height: 24px !important;
+}
+
+.MuiChip-colorSuccess {
+  background: rgba(74,222,128,0.15) !important;
+  color: var(--green) !important;
+  border: 1px solid rgba(74,222,128,0.3) !important;
+}
+
+.MuiChip-colorError {
+  background: rgba(248,113,113,0.15) !important;
+  color: var(--red) !important;
+  border: 1px solid rgba(248,113,113,0.3) !important;
+}
+
+.MuiChip-colorWarning {
+  background: rgba(245,158,11,0.15) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(245,158,11,0.3) !important;
+}
+
+.MuiChip-colorDefault {
+  background: rgba(138,155,191,0.12) !important;
+  color: var(--navy-muted) !important;
+  border: 1px solid rgba(138,155,191,0.2) !important;
+}
+
+/* ============================================
+   DIALOG (AdminDashboard edit)
+============================================ */
+
+.MuiDialog-paper {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6) !important;
+}
+
+.MuiDialog-paper .MuiTypography-h5 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  color: var(--cream) !important;
+  font-weight: 700 !important;
+}
+
+/* ============================================
+   ALERTS
+============================================ */
+
+.MuiAlert-root {
+  border-radius: 10px !important;
+  font-size: 0.87rem !important;
+}
+
+.MuiAlert-standardError,
+.MuiAlert-filledError {
+  background: rgba(248,113,113,0.12) !important;
+  color: #fca5a5 !important;
+  border: 1px solid rgba(248,113,113,0.25) !important;
+}
+
+.MuiAlert-standardSuccess,
+.MuiAlert-filledSuccess {
+  background: rgba(74,222,128,0.1) !important;
+  color: #86efac !important;
+  border: 1px solid rgba(74,222,128,0.2) !important;
+}
+
+.MuiAlert-icon {
+  opacity: 0.9;
+}
+
+/* ============================================
+   BOOK DETAILS PAGE (no dedicated CSS file)
+============================================ */
+
+.book-detail-cover {
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.book-detail-meta {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 4px 0;
+}
+
+.book-detail-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.comment-box {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.comment-author {
+  color: var(--gold) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   WELCOME PAGE (no dedicated CSS file)
+============================================ */
+
+.welcome-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: var(--cream) !important;
+}
+
+.welcome-subtitle {
+  color: var(--navy-muted) !important;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.welcome-card {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+  border-radius: var(--radius-card) !important;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--gold) !important;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45) !important;
+}
+
+.welcome-card .MuiTypography-h6 {
+  color: var(--cream) !important;
+}
+
+.welcome-card .MuiTypography-body2,
+.welcome-card .MuiTypography-colorTextSecondary {
+  color: var(--navy-muted) !important;
+}
+
+/* ============================================
+   CIRCULAR PROGRESS
+============================================ */
+
+.MuiCircularProgress-root {
+  color: var(--gold) !important;
+}
+
+/* ============================================
+   COLLAPSE / FILTER PANEL GLOBAL
+============================================ */
+
+.MuiCollapse-root .MuiPaper-root {
+  background: var(--navy-mid) !important;
+  border: 1px solid var(--navy-border) !important;
+}
+
+/* ============================================
+   SCROLLBAR (Webkit)
+============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}

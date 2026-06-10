@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ── Navbar purple override ── */
+/* Applied via MUI AppBar; these give the navbar the purple look from the screenshot */
+.MuiAppBar-root {
+  background-color: #6a0dad !important;
+  box-shadow: 0 2px 8px rgba(106, 13, 173, 0.4) !important;
+}
+
+/* ── General page background ── */
+body {
+  background: #f0f4f8;
+  color: #1a1a2e;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Library catalog container ── */
+.home-catalog {
+  width: 100%;
+  min-height: 90vh;
+  background: #f0f4f8;
+  padding: 30px 20px 60px;
+}
+
+/* ── Book card hover ── */
+.MuiCard-root {
+  border-radius: 12px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ── Card action buttons ── */
+.MuiCard-root .MuiButton-contained {
+  background: #1a1a2e !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 0.88rem !important;
+}
+
+.MuiCard-root .MuiButton-contained:hover {
+  background: #2d2d4e !important;
+}
+
+/* ── Search bar ── */
+.MuiTextField-root .MuiOutlinedInput-root {
+  border-radius: 10px !important;
+}
+
+/* ── Filter panel ── */
+.MuiPaper-root {
+  border-radius: 14px !important;
+}
+
+/* ── Welcome / Hero section ── */
+.home-container {
+  width: 100%;
+  min-height: 88vh;
+  background: linear-gradient(to right, #f8fafc, #dbeafe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.home-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.home-text {
+  flex: 1;
+}
+
+.home-text h1 {
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.home-text h1 span {
+  color: #2563eb;
+  text-shadow: 2px 2px 12px rgba(37, 99, 235, 0.25);
+}
+
+.home-text p {
+  font-size: clamp(16px, 2vw, 22px);
+  color: #334155;
+  margin: 10px 0;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.home-text button {
+  margin-top: 28px;
+  padding: 13px 30px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+}
+
+.home-text button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.home-image img {
+  width: 420px;
+  max-width: 100%;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.12));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+/* ── Responsive ── */
+@media screen and (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-image img {
+    width: 260px;
+  }
+}
