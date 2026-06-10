@@ -1,0 +1,278 @@
+/* ============================================
+   CELESTIAL READS — USER PROFILE PAGE
+============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0f1624;
+  color: #e8e0d4;
+  min-height: 100vh;
+}
+
+/* ── Page shell ── */
+.profile-page {
+  min-height: 100vh;
+  background: #0f1624;
+  padding: 36px 0 60px;
+}
+
+/* ── Page titles ── */
+.profile-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem) !important;
+  color: #f0e6c8 !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -0.01em;
+}
+
+.profile-subtitle {
+  color: #8a9bbf !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 28px !important;
+}
+
+/* ── MUI Container inside dark page ── */
+.profile-page .MuiContainer-root h4,
+.profile-page .MuiContainer-root h5 {
+  color: #f0e6c8;
+}
+
+.profile-page .MuiContainer-root .MuiTypography-h4 {
+  font-family: 'Playfair Display', serif;
+  color: #f0e6c8;
+}
+
+.profile-page .MuiTypography-body1,
+.profile-page .MuiTypography-body2 {
+  color: #c8d6e8;
+}
+
+/* ── Profile card (Paper) ── */
+.profile-card,
+.profile-page .MuiPaper-root {
+  background: #1a2540 !important;
+  border-radius: 16px !important;
+  border: 1px solid #2e3d5c !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35) !important;
+  padding: 28px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-card::before,
+.profile-page .MuiPaper-root::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a84c, #f0d080, #c9a84c);
+}
+
+/* ── Info rows ── */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-info p {
+  margin: 0;
+  color: #c8d6e8;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  background: rgba(15, 22, 36, 0.4);
+  border-radius: 8px;
+  border-left: 3px solid #2e3d5c;
+}
+
+.profile-info strong {
+  color: #c9a84c;
+  min-width: 90px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+/* ── Rented count badge ── */
+.rented-box {
+  background: #1a2540;
+  border: 1px solid #2e3d5c;
+  border-left: 4px solid #c9a84c;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.rented-box span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #c9a84c;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ── Form fields in edit mode ── */
+.profile-page .MuiOutlinedInput-root,
+.profile-form .MuiOutlinedInput-root {
+  background: #0f1624 !important;
+  border-radius: 10px !important;
+  color: #e8e0d4 !important;
+  font-size: 0.92rem;
+}
+
+.profile-page .MuiOutlinedInput-root fieldset {
+  border-color: #2e3d5c !important;
+}
+
+.profile-page .MuiOutlinedInput-root:hover fieldset {
+  border-color: #c9a84c !important;
+}
+
+.profile-page .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #c9a84c !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.12);
+}
+
+.profile-page .MuiInputLabel-root {
+  color: #8a9bbf !important;
+}
+
+.profile-page .MuiInputLabel-root.Mui-focused {
+  color: #c9a84c !important;
+}
+
+.profile-page .MuiInputBase-input {
+  color: #e8e0d4 !important;
+}
+
+.profile-page .MuiFormHelperText-root {
+  color: #8a9bbf;
+  font-size: 0.75rem;
+}
+
+/* ── Profile buttons ── */
+.profile-btn {
+  width: fit-content;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+  padding: 9px 22px !important;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #c9a84c, #a8833a) !important;
+  color: #0f1624 !important;
+  box-shadow: 0 3px 12px rgba(201, 168, 76, 0.25) !important;
+}
+
+.save-btn:hover {
+  opacity: 0.9;
+  box-shadow: 0 6px 18px rgba(201, 168, 76, 0.35) !important;
+}
+
+/* Contained button inside profile */
+.profile-page .MuiButton-contained {
+  background: linear-gradient(135deg, #c9a84c, #a8833a) !important;
+  color: #0f1624 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 3px 12px rgba(201, 168, 76, 0.2) !important;
+}
+
+.profile-page .MuiButton-contained:hover {
+  opacity: 0.9;
+}
+
+.profile-page .MuiButton-outlined {
+  border-color: #2e3d5c !important;
+  color: #c8d6e8 !important;
+  text-transform: none !important;
+  border-radius: 8px !important;
+}
+
+.profile-page .MuiButton-outlined:hover {
+  border-color: #c9a84c !important;
+  color: #c9a84c !important;
+}
+
+/* ── Section title ── */
+.request-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  color: #f0e6c8 !important;
+  margin-bottom: 16px !important;
+  font-size: 1.4rem !important;
+}
+
+/* ── Requests table ── */
+.request-table,
+.profile-page table {
+  background: #1a2540 !important;
+  border-radius: 14px !important;
+  overflow: hidden;
+  border: 1px solid #2e3d5c !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.profile-page .MuiTableHead-root {
+  background: #0f1624 !important;
+}
+
+.profile-page .MuiTableCell-head {
+  font-weight: 700 !important;
+  color: #8a9bbf !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid #2e3d5c !important;
+  padding: 14px 16px !important;
+}
+
+.profile-page .MuiTableCell-body {
+  color: #c8d6e8 !important;
+  border-bottom: 1px solid rgba(46, 61, 92, 0.5) !important;
+  font-size: 0.9rem;
+  padding: 14px 16px !important;
+}
+
+.profile-page .MuiTableRow-root:hover .MuiTableCell-body {
+  background: rgba(201, 168, 76, 0.04) !important;
+}
+
+/* ── Empty requests ── */
+.no-request {
+  text-align: center;
+  color: #8a9bbf;
+  padding: 40px;
+  background: #1a2540;
+  border-radius: 14px;
+  border: 1px solid #2e3d5c;
+  font-style: italic;
+}
+
+/* ── Alerts ── */
+.profile-page .MuiAlert-root {
+  border-radius: 8px !important;
+  font-size: 0.87rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .profile-page .MuiPaper-root {
+    padding: 20px !important;
+  }
+
+  .profile-info strong {
+    display: block;
+    margin-bottom: 3px;
+  }
+}

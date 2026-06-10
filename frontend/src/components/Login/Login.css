@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background: #6db3f2;
+}
+
+/* Full-page centering wrapper */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #6db3f2;
+  padding: 20px;
+}
+
+/* Outer rounded blue gradient box */
+.login-page {
+  width: 90%;
+  max-width: 1100px;
+  min-height: 75vh;
+  background: linear-gradient(135deg, #003366, #0077cc);
+  border-radius: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+/* Decorative circles */
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.login-page::before {
+  width: 320px;
+  height: 320px;
+  top: -100px;
+  right: -100px;
+}
+
+.login-page::after {
+  width: 260px;
+  height: 260px;
+  bottom: -80px;
+  left: -80px;
+}
+
+/* Glassmorphism card */
+.login-card {
+  width: 100%;
+  max-width: 400px !important;
+  padding: 38px 36px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 22px !important;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+/* BookStore label */
+.login-card h3,
+.login-brand {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* "Login" big heading */
+.login-card h1,
+.login-heading {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+/* MUI overrides inside card — make inputs white background */
+.login-card .MuiOutlinedInput-root {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-radius: 10px !important;
+  color: #1a1a2e !important;
+}
+
+.login-card .MuiOutlinedInput-root fieldset {
+  border-color: transparent !important;
+}
+
+.login-card .MuiOutlinedInput-root:hover fieldset {
+  border-color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.login-card .MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+}
+
+.login-card .MuiInputLabel-root.MuiInputLabel-shrink {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.login-card .MuiInputBase-input {
+  color: #1a1a2e !important;
+  font-weight: 500;
+}
+
+/* Sign In button */
+.login-card .MuiButton-contained {
+  background: #1a4a8a !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+  text-transform: none !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  transition: background 0.25s ease !important;
+}
+
+.login-card .MuiButton-contained:hover {
+  background: #0d3370 !important;
+}
+
+/* "Forgot Password?" text */
+.forgot {
+  margin-top: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.forgot:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Signup link */
+.signup-text,
+.login-card .signup-text {
+  margin-top: 18px !important;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 14px !important;
+}
+
+.login-card a,
+.signup-text a {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-card a:hover,
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Alert */
+.login-card .MuiAlert-root {
+  border-radius: 8px !important;
+  font-size: 0.86rem;
+}
+
+/* Social buttons (if used) */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.social-buttons button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.social-buttons button:hover {
+  transform: scale(1.08);
+}
+
+.social-buttons button img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Divider text */
+.continue {
+  text-align: center;
+  margin: 16px 0 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+}

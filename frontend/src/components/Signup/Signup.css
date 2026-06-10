@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+}
+
+/* Outer page wrapper */
+.signup-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px 60px;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+}
+
+/* Card */
+.signup-card {
+  width: 100% !important;
+  max-width: 460px !important;
+  padding: 36px 32px !important;
+  background: #ffffff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.18) !important;
+  color: #1a1a2e;
+}
+
+/* Title */
+.signup-title {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  color: #1a1a2e !important;
+  text-align: center;
+  margin-bottom: 20px !important;
+}
+
+/* MUI fields */
+.signup-card .MuiOutlinedInput-root {
+  border-radius: 10px !important;
+  background: #f8f9fb !important;
+}
+
+.signup-card .MuiOutlinedInput-root fieldset {
+  border-color: #d1d9e6 !important;
+}
+
+.signup-card .MuiOutlinedInput-root:hover fieldset {
+  border-color: #6a0dad !important;
+}
+
+.signup-card .MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: #6a0dad !important;
+  box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+}
+
+.signup-card .MuiInputLabel-root.Mui-focused {
+  color: #6a0dad !important;
+}
+
+/* Submit button */
+.signup-btn,
+.signup-card .MuiButton-contained {
+  background: #4a90e2 !important;
+  border-radius: 10px !important;
+  padding: 12px !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 14px rgba(74, 144, 226, 0.35) !important;
+  transition: background 0.25s ease !important;
+}
+
+.signup-btn:hover,
+.signup-card .MuiButton-contained:hover {
+  background: #357abd !important;
+}
+
+/* Login link at bottom */
+.login-link,
+.signup-card .login-link {
+  margin-top: 14px !important;
+  text-align: center;
+  font-size: 14px !important;
+  color: #555 !important;
+}
+
+.login-link a,
+.signup-card a {
+  color: #4a90e2 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover,
+.signup-card a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox label */
+.signup-card .MuiFormControlLabel-label {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Alert */
+.signup-card .MuiAlert-root {
+  border-radius: 8px !important;
+  font-size: 0.86rem;
+}
